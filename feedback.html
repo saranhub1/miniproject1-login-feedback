@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback form</title>
+    <link rel="stylesheet" href="feedback.css">
+    <script>
+        function validate() {
+            const name = document.forms["feedbackForm"]["name"];
+            const age = document.forms["feedbackForm"]["age"];
+            const email = document.forms["feedbackForm"]["email"];
+            const rating = document.forms["feedbackForm"]["rating"];
+            const howtosite = document.forms["feedbackForm"]["howtosite"];
+            
+            if (name.value.trim() === "") {
+                alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+            if (above18 == false) {
+                alert("Please confirm that you are above 18.");
+                return false;
+            }
+            if (email.value.trim() === "") {
+                alert("Please enter your email.");
+                email.focus();
+                return false;
+            }
+            
+            if (rating.value === "default") {
+                alert("Please rate our site.");
+                rating.focus();
+                return false;
+            }
+            
+            let isChecked = false;
+            for (let i = 0; i < howtosite.length; i++) {
+                if (howtosite[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+            
+            if (!isChecked) {
+                alert("Please choose how you got to our site.");
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="feedbackForm" method="get" onsubmit="return validate()">
+        <p>
+            <label>Name: <input name="name" type="text" maxlength="30" required></label>
+        </p>
+        <p>
+            <label>Age:<input name="age" type="text" maxlenght="3" required></label>
+        </p>
+
+        <p>
+            <label>Comments:<br>
+                <textarea name="comments" rows="4" cols="36" placeholder="Enter comments here."></textarea>
+            </label>
+        </p>
+
+        <p>
+            <label>E-mail Address: <input name="email" type="email" required></label>
+        </p>	
+
+        <p>
+            <strong>Give Suggestions</strong><br>
+            <label><input name="thingsliked" type="checkbox" value="Design"> need more images</label>
+            <label><input name="thingsliked" type="checkbox" value="Links"> need more content</label>
+            <label><input name="thingsliked" type="checkbox" value="Ease"> make it more friendly</label>
+            <label><input name="thingsliked" type="checkbox" value="Images"> others</label>
+        </p>
+
+        <p>
+            <strong>How did you get to our site?:</strong><br>
+            <label><input name="howtosite" type="radio" value="search engine"> Search engine</label>
+            <label><input name="howtosite" type="radio" value="link"> Links from another site</label>
+            <label><input name="howtosite" type="radio" value="other"> Other</label>
+        </p>
+
+        <p>
+            <label>Rate our site:</label>
+            <select name="rating">
+                <option value="default" selected disabled>Choose a rating</option>
+                <option value="5">Amazing</option>
+                <option value="4">Good</option>
+                <option value="3">Okay</option>
+                <option value="2">Bad</option>
+                <option value="1">Terrible</option>
+            </select>
+        </p>
+
+        <p>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+        </p>
+    </form>
+</body>
+</html>    

@@ -1,0 +1,53 @@
+/* Body styles */
+body {
+	font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+	margin-bottom: 0;
+  }
+  
+  .navbar-brand {
+	font-weight: bold;
+	font-size: 1.5rem;
+  }
+  
+  .navbar-nav .nav-link {
+	font-weight: bold;
+	font-size: 1.1rem;
+	padding: 0.5rem 1rem;
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+	background-color: #343a40;
+  }
+  
+  .dropdown-menu {
+	background-color: #343a40;
+  }
+  
+  .dropdown-item {
+	color: #fff;
+  }
+  
+  /* Header styles */
+  header {
+	background-color: #f2f2f2;
+	padding: 3rem 0;
+  }
+  
+  header h1 {
+	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+  }
+  
+  header p {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+  }
+  
+  header img {
+	width: 100%;
+  }
